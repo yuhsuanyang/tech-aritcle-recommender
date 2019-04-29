@@ -1,0 +1,12 @@
+page1:https://thenextweb.com/apps/2019/04/26/facebook-clamps-down-on-personality-quizzes-to-plug-data-leaks/
+page2:https://thenextweb.com/artificial-intelligence/2019/04/24/deep-learning-can-help-us-eradicate-suicide-but-only-if-we-let-it/
+page3:https://thenextweb.com/artificial-intelligence/2019/04/24/why-magic-the-gathering-is-ais-toughest-challenge/
+page4:https://thenextweb.com/artificial-intelligence/2019/04/22/listen-to-this-ai-spit-out-brutal-death-metal-non-stop/
+page5:https://thenextweb.com/apps/2019/03/13/google-squeezed-an-offline-dictation-ai-into-its-keyboard-app/
+page6:https://www.bloomberg.com/opinion/articles/2018-01-05/big-data-works-only-for-those-who-hype-it
+page7:https://www.bloomberg.com/news/articles/2018-07-13/microsoft-calls-for-ai-face-recognition-software-regulation
+page8:https://www.bloomberg.com/news/articles/2019-04-25/huawei-s-r-d-spending-balloons-as-u-s-tensions-flare-over-5g
+page9:https://www.bloomberg.com/news/articles/2019-04-22/apple-face-recognition-blamed-by-new-york-teen-for-false-arrest
+page10:https://www.bloomberg.com/news/articles/2019-04-11/uber-has-spent-more-than-1-billion-on-driverless-cars
+
+ 
