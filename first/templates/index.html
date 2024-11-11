@@ -1,135 +1,157 @@
 <!doctype html>
-{% load staticfiles %}
+{% load static %}
 <html>
-    <head>
-        <style>
-            @font-face {
-                font-family: handwritten;
-                src: url('{% static "DK Cool Crayon.ttf"%}') 
-                }
-            @font-face {
-                font-family: sketch;
-                src: url('{% static "KGSecondChancesSketch.ttf"%}') 
-                }    
-            a{
-                text-align: center;
-                text-decoration: none;
-                font-size: 150%;
-                color:white;
-            }
-            input, form{
-                color: white;
-                border: none;
-                font-family: handwritten;
-                font-size: 2vw;
-                outline: none;
-                background-color: transparent;
-            }
-            img{
-                max-width: 100%;
-            }
-            .back{
-                background-image: url('{% static "back1.jpg"%}');
-                font-family: handwritten;
-            }
-            .time{
-                position: absolute;
-                top:10vh;
-                right: 10vw;
-                color:white;
-                font-size: 150%;
-            }
-            .content{
-                width:50%;
-                position: absolute;
-                top: 5vh;
-                left: 5vw;
-                color:white;
-                font-size: 200%;
-            }
-            .title{
-                color:gold;
-                font-family: sketch;
-                font-size: 5vw;
-            }  
-            .button{
-                color: hotpink;
-            }
-            .gallery{
-                position: absolute;
-                top:35vh;
-                right:5vw;
-                width:40%;
-                color:deepskyblue;
-                font-size: 2vw;
-            }
-            #keyin{
-                border-bottom: 2px solid white;
-            }
-            
-        </style>
-        <script>
-            var photo=['{% static "page1.jpg"%}','{% static "page2.jpg"%}','{% static "page3.jpg"%}','{% static "page4.jpg"%}',
-            '{% static "page5.jpg"%}','{% static "page6.jpg"%}','{% static "page7.jpg"%}','{% static "page8.jpg"%}','{% static "page9.jpg"%}',
-            '{% static "page10.jpg"%}'];
-            var links=['https://thenextweb.com/apps/2019/04/26/facebook-clamps-down-on-personality-quizzes-to-plug-data-leaks/',
-                        'https://thenextweb.com/artificial-intelligence/2019/04/24/deep-learning-can-help-us-eradicate-suicide-but-only-if-we-let-it/',
-                        'https://thenextweb.com/artificial-intelligence/2019/04/24/why-magic-the-gathering-is-ais-toughest-challenge/',
-                        'https://thenextweb.com/artificial-intelligence/2019/04/22/listen-to-this-ai-spit-out-brutal-death-metal-non-stop/',
-                        'https://thenextweb.com/apps/2019/03/13/google-squeezed-an-offline-dictation-ai-into-its-keyboard-app/',
-                        'https://www.bloomberg.com/opinion/articles/2018-01-05/big-data-works-only-for-those-who-hype-it',
-                        'https://www.bloomberg.com/news/articles/2018-07-13/microsoft-calls-for-ai-face-recognition-software-regulation',
-                        'https://www.bloomberg.com/news/articles/2019-04-25/huawei-s-r-d-spending-balloons-as-u-s-tensions-flare-over-5g',
-                        'https://www.bloomberg.com/news/articles/2019-04-22/apple-face-recognition-blamed-by-new-york-teen-for-false-arrest',
-                        'https://www.bloomberg.com/news/articles/2019-04-11/uber-has-spent-more-than-1-billion-on-driverless-cars'
-            ]
-            var i=0;
-            function autoplay(){
-                    if(i==photo.length-1){
-                        i=0;
-                    }else{
-                        i++;
-                    }
-                    document.getElementById("play").src=photo[i];
-                    document.getElementById("link").href=links[i];
-                }
-            window.onload=function(){
-                    setInterval(autoplay, 2000);
-            }
-            var x;
-            function complete(x){
-                document.getElementById("keyin").value=x;
-            }        
-        </script>
-    </head>               
-    <body class="back">
-        <div class='time'>
-            <p>Date: {{date}}</p>
-        </div>
-        <div class="content">
-            <p class="title">Tech Article <br>Recommender</p>
-            <form action="/try/" method="GET" autocomplete="off">
-                I am interesting in  &nbsp <input type="text" name="keyword" id="keyin">.<br><br>
-                Search articles in <input type="submit" value="TNW" class="button" name="site">/
-                <input type="submit" value="Bloomberg" class="button" name="site">.
-            </form>
-        <div>
-            <p style="color:coral">Hot topics:</p>
-            <table>
-                <tr>
-                    <td id='tag'  onclick="complete('AI')">AI  &nbsp</td>
-                    <td id='tag'  onclick="complete('smart')">smart  &nbsp</td>
-                    <td id='tag'  onclick="complete('Apple')">Apple  &nbsp</td>
-                    <td id='tag'  onclick="complete('deep')">deep  &nbsp</td>
-                    <td id='tag'  onclick="complete('driverless')">driverless  &nbsp</td>
-                </tr>
-            </table>
-        </div>
-        </div>
-        <div class="gallery">
-            <p>Have no idea? Watch this!</p>
-            <a href="https://thenextweb.com/apps/2019/04/26/facebook-clamps-down-on-personality-quizzes-to-plug-data-leaks/" target="blank" id="link">
-                <img src='{% static "page1.jpg"%}' id="play"></a>
-        </div>
-    </body>
+  <head>
+    <style>
+      @font-face {
+        font-family: handwritten;
+        src: url('{% static "DK Cool Crayon.ttf"%}');
+      }
+      @font-face {
+        font-family: sketch;
+        src: url('{% static "KGSecondChancesSketch.ttf"%}');
+      }
+      a {
+        text-align: center;
+        text-decoration: none;
+        font-size: 150%;
+        color: white;
+      }
+      input,
+      form {
+        color: white;
+        border: none;
+        font-family: handwritten;
+        font-size: 2vw;
+        outline: none;
+        background-color: transparent;
+      }
+      img {
+        max-width: 100%;
+      }
+      .back {
+        background-image: url('{% static "back1.jpg"%}');
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: handwritten;
+      }
+      .time {
+        position: absolute;
+        top: 10vh;
+        right: 10vw;
+        color: white;
+        font-size: 150%;
+      }
+      .content {
+        width: 50%;
+        position: absolute;
+        top: 5vh;
+        left: 5vw;
+        color: white;
+        font-size: 200%;
+      }
+      .title {
+        color: gold;
+        font-family: sketch;
+        font-size: 5vw;
+      }
+      .button {
+        color: hotpink;
+      }
+      .gallery {
+        position: absolute;
+        top: 35vh;
+        right: 5vw;
+        width: 40%;
+        color: deepskyblue;
+        font-size: 2vw;
+      }
+      #keyin {
+        border-bottom: 2px solid white;
+      }
+    </style>
+    <script data-links="{{references}}">
+      var photo = [
+        '{% static "page1.jpg"%}',
+        '{% static "page2.jpg"%}',
+        '{% static "page3.jpg"%}',
+        '{% static "page4.jpg"%}',
+        '{% static "page5.jpg"%}',
+        '{% static "page6.jpg"%}',
+        '{% static "page7.jpg"%}',
+        '{% static "page8.jpg"%}',
+        '{% static "page9.jpg"%}',
+        '{% static "page10.jpg"%}',
+      ];
+      // const data = document.currentScript.dataset;
+      // const links = data.links;
+      // console.log(links);
+      var links = [
+        "https://thenextweb.com/apps/2019/04/26/facebook-clamps-down-on-personality-quizzes-to-plug-data-leaks/",
+        "https://thenextweb.com/artificial-intelligence/2019/04/24/deep-learning-can-help-us-eradicate-suicide-but-only-if-we-let-it/",
+        "https://thenextweb.com/artificial-intelligence/2019/04/24/why-magic-the-gathering-is-ais-toughest-challenge/",
+        "https://thenextweb.com/artificial-intelligence/2019/04/22/listen-to-this-ai-spit-out-brutal-death-metal-non-stop/",
+        "https://thenextweb.com/apps/2019/03/13/google-squeezed-an-offline-dictation-ai-into-its-keyboard-app/",
+        "https://www.bloomberg.com/opinion/articles/2018-01-05/big-data-works-only-for-those-who-hype-it",
+        "https://www.bloomberg.com/news/articles/2018-07-13/microsoft-calls-for-ai-face-recognition-software-regulation",
+        "https://www.bloomberg.com/news/articles/2019-04-25/huawei-s-r-d-spending-balloons-as-u-s-tensions-flare-over-5g",
+        "https://www.bloomberg.com/news/articles/2019-04-22/apple-face-recognition-blamed-by-new-york-teen-for-false-arrest",
+        "https://www.bloomberg.com/news/articles/2019-04-11/uber-has-spent-more-than-1-billion-on-driverless-cars",
+      ];
+      var i = 0;
+      function autoplay() {
+        if (i == photo.length - 1) {
+          i = 0;
+        } else {
+          i++;
+        }
+        document.getElementById("play").src = photo[i];
+        document.getElementById("link").href = links[i];
+      }
+      window.onload = function () {
+        setInterval(autoplay, 2000);
+      };
+      var x;
+      function complete(x) {
+        document.getElementById("keyin").value = x;
+      }
+    </script>
+  </head>
+  <body class="back">
+    <div class="time">
+      <p>Date: {{date}}</p>
+    </div>
+    <div class="content">
+      <p class="title">Tech Article <br />Recommender</p>
+      <form action="/try/" method="GET" autocomplete="off">
+        I am interesting in &nbsp
+        <input type="text" name="keyword" id="keyin" />.<br /><br />
+        Search articles in
+        <input type="submit" value="TNW" class="button" name="site" />/
+        <input type="submit" value="Bloomberg" class="button" name="site" />.
+      </form>
+      <div>
+        <p style="color: coral">Hot topics:</p>
+        <table>
+          <tr>
+            <td id="tag" onclick="complete('AI')">AI &nbsp</td>
+            <td id="tag" onclick="complete('smart')">smart &nbsp</td>
+            <td id="tag" onclick="complete('Apple')">Apple &nbsp</td>
+            <td id="tag" onclick="complete('deep')">deep &nbsp</td>
+            <td id="tag" onclick="complete('driverless')">driverless &nbsp</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="gallery">
+      <p>Have no idea? Watch this!</p>
+      <a
+        href="https://thenextweb.com/apps/2019/04/26/facebook-clamps-down-on-personality-quizzes-to-plug-data-leaks/"
+        target="blank"
+        id="link"
+      >
+        <img src='{% static "page1.jpg"%}' id="play"
+      /></a>
+    </div>
+  </body>
 </html>
